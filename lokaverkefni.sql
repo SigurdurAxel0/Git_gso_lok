@@ -69,11 +69,11 @@ values
 insert into
     tegund(nafn)
 values
-    ("Troy Shondell"),
-    ("Kitty Kallen"),
-    ("Angus Scrimm"),
-    ("David Bowie"),
-    ("David Margulies");
+    ("Hard Rock"),
+    ("Soul"),
+    ("Opera"),
+    ("Classical Music"),
+    ("Jazz");
 
 insert into
     flytjandi(nafn,faedingardagur,lysing,danardagur,flokkur_flytjanda)
@@ -177,6 +177,18 @@ VALUES
 
 
 
+#A
+SELECT lag.nafn as "Lag", diskur.nafn as "Diskur", lag.texti
+FROM lag
+INNER JOIN diskur
+ON lag.diskur = diskur.ID
+WHERE diskur.nafn = "Stairway to Heaven "
 
+#B
+SELECT lag.nafn as "Lag", flytjandi.nafn as "Flytjandi", lag.texti
+FROM lag
+INNER JOIN flytjandi
+ON lag.flytjandi = flytjandi.ID
+WHERE flytjandi.nafn = "Queen"
 
 
